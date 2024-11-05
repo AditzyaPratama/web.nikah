@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resepsi Pernikahan</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Amperzand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="background.css">
+    <style>
+        /* Menyelaraskan ukuran gambar */
+        .photo-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Menambahkan background image */
+        body {
+            background-image: url('AnimeL.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+        }
+
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        .invitation-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+
+        /* Tambahkan warna background pada jadwal */
+        .schedule {
+            background-color: #fafafa;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .event h2 {
+            color: #333;
+        }
+
+        /* Map section style */
+        .map-section {
+            margin-top: 30px;
+        }
+
+        /* QR code section */
+        .qr-code {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Timer style */
+        .countdown {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Gaya untuk menempatkan nama di atas gambar */
+        .photos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .photos div {
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        /* Gaya untuk menempatkan teks di samping gambar */
+        .lorem-text {
+            flex-basis: 50%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Undangan Pernikahan</h1>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown"></div>
+
+        <!-- Tombol Lihat Undangan -->
+        <button class="button" onclick="showInvitation()">Lihat Undangan</button>
+
+        <div id="invitation" class="invitation-card" style="display: none;">
+            <div class="photos">
+                <!-- Nama di atas gambar -->
+                <div>
+                    <h2>Rangga</h2>
+                    <img src="AnimeL1.jpg" alt="Foto Pengantin Pria" class="photo-img">
+                </div>
+                <div class="lorem-text">
+                    <p><b>Putra Kedua dari Bapak H.Joko Susilo & Ibu Hj.Ani Muslikha</b></p>
+                </div>
+            </div>
+            <div class="photos">
+                <!-- Nama di atas gambar -->
+                <div>
+                    <h2>Tasya</h2>
+                    <img src="AnimeC.jpg" alt="Foto Pengantin Wanita" class="photo-img">
+                </div>
+                <div class="lorem-text">
+                    <p><b>Putri Pertama dari Bapak Ade Suryadi & Ibu Titi Hermiati</b></p>
+                </div>
+            </div>
+
+            <div class="schedule">
+                <div class="event">
+                    <h2>IJAB QABUL</h2>
+                    <p><strong>08.00 - 10.00</strong></p>
+                    <p>Senin, 25 Januari 2025</p>
+                    <p class="note">Saat acara akad diharapkan untuk kondusif menjaga kehidmatan dan kelangsungan seluruh prosesi.</p>
+                </div>
+                <div class="event">
+                    <h2>RESEPSI</h2>
+                    <p><strong>10.50 - selesai</strong></p>
+                    <p>Senin, 25 Januari 2025</p>
+                    <p class="note">Saat acara akad diharapkan untuk kondusif menjaga kehidmatan dan kelangsungan seluruh prosesi.</p>
+                </div>
+            </div>
+
+            <h3>Tempat</h3>
+            <p>Jl. Soekarno Hatta No.258 H, Tunggurono, Kec. Binjai Tim., Kota Binjai, Sumatera Utara 20351</p>
+
+            <div class="map-section">
+                <h2>Maps:</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.907914064285!2d98.51082487497322!3d3.608545996365579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303129ae30571bc3%3A0xec27a2f2f169df3!2sSoeta%20Dining%20Hall!5e0!3m2!1sid!2sid!4v1726302821972!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="qr-code">
+                <h2>Scan dibawah ini:</h2>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" alt="QR Code">
+                <p>Silakan scan QR code untuk konfirmasi kehadiran.</p>
+            </div>
+
+            <div class="invitation-footer">
+                <p>Terimakasih</p>
+            </div>
+
+            <h3>Ucapan Terima Kasih</h3>
+            <p>Kepada [Nama Tamu],
+
+                Kami ingin mengucapkan terima kasih yang sebesar-besarnya atas kehadiran Anda dalam pernikahan kami. Kehadiran Anda membuat hari istimewa kami menjadi lebih berarti dan tak terlupakan. Kami sangat menghargai dukungan, doa, dan kehangatan yang Anda berikan.
+                
+                Semoga kebahagiaan dan keberkahan senantiasa menyertai Anda. Terima kasih atas segala kebaikan dan perhatian yang telah Anda tunjukkan.
+                
+                Salam hangat, [Nama Pengantin]</p>
+        </div>
+    </div>
+    
+    <script>
+        // Menghitung mundur ke acara pernikahan (misal tanggal 25 Januari 2025)
+        var countDownDate = new Date("Jan 25, 2025 08:00:00").getTime();
+
+        var countdownfunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + " hari, " + hours + " jam, "
+            + minutes + " menit, " + seconds + " detik ";
+
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("countdown").innerHTML = "Acara sudah dimulai!";
+            }
+        }, 1000);
+
+        function showInvitation() {
+            var invitation = document.getElementById('invitation');
+            if (invitation.style.display === 'none' || invitation.style.display === '') {
+                invitation.style.display = 'block';
+            } else {
+                invitation.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
